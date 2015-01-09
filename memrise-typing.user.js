@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Memrise: Make Me Type
-// @description    This script converts Memrise multiple-choice tests to typing
+// @description    This script replaces Memrise multiple-choice tests with typing
 //                 tests, where possible.
 // @match          http://www.memrise.com/course/*/garden/*
 // @match          http://www.memrise.com/garden/water/*
