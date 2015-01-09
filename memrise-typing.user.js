@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Memrise: Make Me Type
-// @description    Death to Scantrons! This script converts Memrise
-//                 multiple-choice tests to typing tests, where possible.
+// @description    This script converts Memrise multiple-choice tests to typing
+//                 tests, where possible.
 // @match          http://www.memrise.com/course/*/garden/*
 // @match          http://www.memrise.com/garden/water/*
 // @grant          none
