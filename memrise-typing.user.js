@@ -10,17 +10,27 @@
 
 function convertMultipleChoiceToTyping(e) {
     // Always jump to session level 6.
-    sessions = MEMRISE.garden.sessions;
-    for (s in sessions) {
-        p = s.prototype.BoxFactory.prototype;
-        if (typeof p === 'undefined') { continue; }
-        p.make_at_level_1 = p.make_at_level_6;
-        p.make_at_level_2 = p.make_at_level_6;
-        p.make_at_level_3 = p.make_at_level_6;
-        p.make_at_level_4 = p.make_at_level_6;
-        p.make_at_level_5 = p.make_at_level_6;
+    sessionTypes = ['WaterSession', 'WaterLevelSession', 'WaterCourseSession',
+        'WaterCategorySession', 'Session', 'ReviewThingsSession',
+        'ReviewSession', 'ReviewLevelSession', 'ReviewCourseSession',
+        'LevelTestSession', 'LevelSession', 'GrowSession', 'CourseSession',
+        'CategorySession'];
+    for (st in sessionTypes) {
+        p = MEMRISE.garden.sessions[sessionTypes[st]];
+        console.log(sessionTypes[st]);
+        var x = 10;
+        var highestLevel = null;
+        while (true) {
+            if (x == 0) { break; }
+            level = p['make_at_level_'+x];
+            if (highestLevel == null && typeof level != 'undefined') {
+                highestLevel = level;
+            }
+            level = highestLevel;
+            x--;
+        }
+        console.log(p);
     }
 }
 
 document.addEventListener("afterscriptexecute", convertMultipleChoiceToTyping, true);
-
