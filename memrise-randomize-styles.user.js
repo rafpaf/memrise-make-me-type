@@ -14,7 +14,7 @@ fontWeights = "300,500,700,900".split(',');
 var observer = new MozMutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         for(var i = 0; i < mutation.addedNodes.length; i++)
-            console.log(mutation.addedNodes[i]);
+            console.log('added: ' + mutation.addedNodes[i]);
     })
 });
 observer.observe(document, {
